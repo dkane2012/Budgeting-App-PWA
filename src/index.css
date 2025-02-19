@@ -1,0 +1,174 @@
+/* Global styles */
+:root {
+  --primary-color: #1a237e;
+  --secondary-color: #304ffe;
+  --error-color: #d32f2f;
+  --success-color: #388e3c;
+  --background-color: #f5f6fa;
+  --text-color: #37474f;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Form styles */
+.expense-form {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+  transition: transform 0.2s;
+}
+
+.expense-form:hover {
+  transform: translateY(-2px);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(48, 79, 254, 0.1);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  width: 100%;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Expenses list styles */
+.expenses-list {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.expenses-list h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.expense-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.expense-item:hover {
+  background-color: #f8f9fa;
+}
+
+.expense-item span:first-child {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.expense-item span:nth-child(2) {
+  color: var(--text-color);
+}
+
+.expense-item span:nth-child(3) {
+  text-transform: capitalize;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.expense-item span:last-child {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.expense-item:last-child {
+  border-bottom: none;
+}
+
+.error {
+  color: var(--error-color);
+  padding: 1rem;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .App {
+    padding: 1rem;
+  }
+
+  .expense-item {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+}
