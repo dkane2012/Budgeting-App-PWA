@@ -12,7 +12,7 @@ function App() {
 
   const fetchExpenses = async () => {
     try {
-      const response = await fetch('/api/expenses');
+      const response = await fetch(import.meta.env.VITE_API_URL + '/api/expenses');
       if (!response.ok) throw new Error('Failed to fetch expenses');
       const data = await response.json();
       setExpenses(data);
@@ -25,7 +25,7 @@ function App() {
 
   const handleAddExpense = async (expenseData) => {
     try {
-      const response = await fetch('/api/expenses', {
+      const response = await fetch(import.meta.env.VITE_API_URL + '/api/expenses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
